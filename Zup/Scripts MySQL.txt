@@ -1,0 +1,37 @@
+/**
+ * .: ZUP - Teste Desenvolvedor JR :.
+ * Autor: Sérgio Guimarães Costa Filho
+ * Data: 25/09/2019
+ * Obs: Executar os respectivos scripts abaixo em um servidor MySQL local.
+ */
+ 
+-- Criar usuário.
+CREATE USER 'usuarioZup'@'localhost' IDENTIFIED BY 'Zup123';
+
+-- Conceder acessos ao usuário criado.
+GRANT ALL PRIVILEGES ON * . * TO 'usuarioZup'@'localhost';
+
+-- Criar base de dados.
+CREATE DATABASE bdTesteZup;
+
+-- Usar base de dados criada.
+USE bdTesteZup;
+
+-- Criar tabela TbPOI na respectiva base de dados.
+CREATE TABLE TbPOI
+(
+	id 			int(4) 		AUTO_INCREMENT,
+	nome 			varchar(30) 	NOT NULL,
+	coordenadaX 		int(4) 		NOT NULL,
+	coordenadaY 		int(4) 		NOT NULL,
+	PRIMARY KEY (id)
+);
+
+-- Inserções iniciais na tabela TbPOI
+INSERT INTO TbPOI (nome, coordenadaX, coordenadaY) VALUES ('LANCHONETE', 27, 12);
+INSERT INTO TbPOI (nome, coordenadaX, coordenadaY) VALUES ('POSTO', 31, 18);
+INSERT INTO TbPOI (nome, coordenadaX, coordenadaY) VALUES ('JOALHERIA', 15, 12);
+INSERT INTO TbPOI (nome, coordenadaX, coordenadaY) VALUES ('FLORICULTURA', 19, 21);
+INSERT INTO TbPOI (nome, coordenadaX, coordenadaY) VALUES ('PUB', 12, 8);
+INSERT INTO TbPOI (nome, coordenadaX, coordenadaY) VALUES ('SUPERMERCADO', 23, 6);
+INSERT INTO TbPOI (nome, coordenadaX, coordenadaY) VALUES ('CHURRASCARIA', 28, 2);
